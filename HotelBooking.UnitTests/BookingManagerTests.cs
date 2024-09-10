@@ -23,6 +23,7 @@ namespace HotelBooking.UnitTests
         
 
         [Fact]
+        [Trait("Category", "AvailableRooms")]
         public void FindAvailableRoom_StartDateNotInTheFuture_ThrowsArgumentException()
         {
             // Arrange
@@ -36,6 +37,7 @@ namespace HotelBooking.UnitTests
         }
 
         [Fact]
+        [Trait("Category", "AvailableRooms")]
         public void FindAvailableRoom_RoomAvailable_RoomIdNotMinusOne()
         {
             // Arrange
@@ -47,6 +49,7 @@ namespace HotelBooking.UnitTests
         }
 
         [Fact]
+        [Trait("Category", "AvailableRooms")]
         public void FindAvailableRoom_RoomAvailable_ReturnsAvailableRoom()
         {
             // This test was added to satisfy the following test design
