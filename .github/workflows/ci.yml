@@ -1,0 +1,51 @@
+name: ASP.NET Core CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      ASPNETCORE_URLS: 'https://+:5001;http://+:5000'
+
+    steps:
+    # Checkout code
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Set up .NET Core
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '7.x' # Use your required .NET version
+
+    # Install dependencies
+    - name: Install dependencies
+      run: dotnet restore
+
+    # Build
+    - name: Build
+      run: dotnet build --configuration Release
+
+    # Test
+    - name: Test
+      run: dotnet test --configuration Release
+
+    # Run the Web API in the background
+    - name: Run the WebApi in the background
+      run: dotnet ./HotelBooking.WebApi/bin/Release/HotelBooking.WebApi.dll &
+
+    # Install Newman
+    - name: Install Newman
+      run: npm install -g newman
+
+    # Run Postman tests
+    - name: Run Postman tests
+      run: newman run Postman/HotelBooking.postman_collection.json -k -r cli
