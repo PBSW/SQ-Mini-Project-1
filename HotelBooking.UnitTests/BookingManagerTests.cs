@@ -19,6 +19,8 @@ namespace HotelBooking.UnitTests
             IRepository<Room> roomRepository = new FakeRoomRepository();
             bookingManager = new BookingManager(bookingRepository, roomRepository);
         }
+        
+        
 
         [Fact]
         public void FindAvailableRoom_StartDateNotInTheFuture_ThrowsArgumentException()
