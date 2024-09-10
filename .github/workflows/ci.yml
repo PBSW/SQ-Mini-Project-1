@@ -40,7 +40,7 @@ jobs:
 
     # Run the Web API in the background
     - name: Run the WebApi in the background
-      run: dotnet ./HotelBooking.WebApi/bin/Release/net7.0/HotelBooking.WebApi.dll &
+      run: dotnet ./HotelBooking.WebApi/bin/Release/HotelBooking.WebApi.dll &
 
     # Install Newman
     - name: Install Newman
