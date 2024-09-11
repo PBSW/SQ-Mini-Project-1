@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using HotelBooking.Core;
 using Moq;
 
@@ -6,7 +8,7 @@ namespace HotelBooking.UnitTests.Fakes;
 
 public static class RepositoryMockFactory
 {
-    public static Mock<IRepository<T>> CreateMockRepository<T>(IEnumerable<T> initialData = null)
+    public static Mock<IRepository<T>> CreateMockRepository<T>(IEnumerable<T> initialData = null) where T : class
     {
         var mockRepo = new Mock<IRepository<T>>();
 
@@ -16,9 +18,13 @@ public static class RepositoryMockFactory
         // Setup GetAll() method
         mockRepo.Setup(repo => repo.GetAll()).Returns(() => dataStore);
 
-        // Setup Get(id) method
+        // Setup Get(id) method for objects with Id property
         mockRepo.Setup(repo => repo.Get(It.IsAny<int>()))
-            .Returns<int>(id => dataStore.Count > id ? dataStore[id] : default);
+            .Returns<int>(id => dataStore.SingleOrDefault(entity => 
+            {
+                var property = entity.GetType().GetProperty("Id");
+                return property != null && (int)property.GetValue(entity) == id;
+            }));
 
         // Setup Add(entity) method
         mockRepo.Setup(repo => repo.Add(It.IsAny<T>()))
@@ -39,11 +45,23 @@ public static class RepositoryMockFactory
         mockRepo.Setup(repo => repo.Remove(It.IsAny<int>()))
             .Callback<int>(id =>
             {
-                if (id >= 0 && id < dataStore.Count)
+                var entityToRemove = dataStore.SingleOrDefault(entity =>
                 {
-                    dataStore.RemoveAt(id);
+                    var property = entity.GetType().GetProperty("Id");
+                    return property != null && (int)property.GetValue(entity) == id;
+                });
+
+                if (entityToRemove != null)
+                {
+                    dataStore.Remove(entityToRemove);
+                }
+                else 
+                {
+                    throw new InvalidOperationException();
                 }
             });
+
+      
 
         return mockRepo;
     }

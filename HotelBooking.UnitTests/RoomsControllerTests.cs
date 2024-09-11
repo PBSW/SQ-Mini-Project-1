@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using HotelBooking.Core;
 using HotelBooking.UnitTests.Fakes;
 using HotelBooking.WebApi.Controllers;
@@ -75,18 +76,76 @@ namespace HotelBooking.UnitTests
         [Fact]
         public void Delete_WhenIdIsLargerThanTwo_RemoveThrowsException()
         {
-            // Instruct the fake Remove method to throw an InvalidOperationException, if a room id that
-            // does not exist in the repository is passed as a parameter. This behavior corresponds to
-            // the behavior of the real repoository's Remove method.
-            fakeRoomRepository.Setup(x =>
-                    x.Remove(It.Is<int>(id => id < 1 || id > 2))).
-                    Throws<InvalidOperationException>();
-
+            // Act
+            Action act = () => controller.Delete(3);
+            
             // Assert
-            Assert.Throws<InvalidOperationException>(() => controller.Delete(3));
+            Assert.Throws<InvalidOperationException>(act);
 
             // Assert against the mock object
             fakeRoomRepository.Verify(x => x.Remove(It.IsAny<int>()));
         }
+        
+        [Fact]
+        public void Post_ValidRoom_AddsRoom_ReturnsCreatedAtRoute()
+        {
+            // Arrange
+            var newRoom = new Room { Id = 3, Description = "C" };
+
+            // Act
+            var result = controller.Post(newRoom) as CreatedAtRouteResult;
+
+            // Assert
+            Assert.NotNull(result);
+            fakeRoomRepository.Verify(x => x.Add(newRoom), Times.Once);
+        }
+
+        [Fact]
+        public void Post_NullRoom_ReturnsBadRequest()
+        {
+            // Act
+            var result = controller.Post(null) as BadRequestResult;
+
+            // Assert
+            Assert.IsType<BadRequestResult>(result);
+            fakeRoomRepository.Verify(x => x.Add(It.IsAny<Room>()), Times.Never);
+        }
+        
+        
+        [Fact]
+        public void GetAll_EmptyRepository_ReturnsEmptyList()
+        {
+            // Arrange
+            fakeRoomRepository = RepositoryMockFactory.CreateMockRepository<Room>(new List<Room>());
+            controller = new RoomsController(fakeRoomRepository.Object);
+
+            // Act
+            var result = controller.Get() as List<Room>;
+
+            // Assert
+            Assert.Empty(result);
+        }
+
+        [Fact]
+        public void GetById_RoomDoesNotExist_ReturnsNotFound()
+        {
+            // Act
+            var result = controller.Get(99);
+
+            // Assert
+            Assert.IsType<NotFoundResult>(result);
+        }
+        
+        
+        [Fact]
+        public void Delete_InvalidId_ReturnsBadRequest()
+        {
+            // Act
+            var result = controller.Delete(-1);
+
+            // Assert
+            Assert.IsType<BadRequestResult>(result);
+        }
+        
     }
 }

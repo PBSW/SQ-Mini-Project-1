@@ -8,8 +8,17 @@
     <projectFile profileName="http">HotelBooking.WebApi/HotelBooking.WebApi.csproj</projectFile>
     <projectFile profileName="https">HotelBooking.WebApi/HotelBooking.WebApi.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b619f3a3-aedc-46d1-871b-28bd68cd7cf2" name="Changes" comment="" />
+    <list default="true" id="b619f3a3-aedc-46d1-871b-28bd68cd7cf2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelBooking.IntegrationTests/BookingManagerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking.IntegrationTests/BookingManagerTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelBooking.Mvc/Views/Bookings/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking.Mvc/Views/Bookings/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelBooking.UnitTests/Fakes/RepositoryMockFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking.UnitTests/Fakes/RepositoryMockFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelBooking.UnitTests/RoomsControllerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking.UnitTests/RoomsControllerTests.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,12 +27,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e5513ea278a143cd936ab293ea014c4a28420/2b/28656b6b/Assert.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b187261058fa986938df785f054eb6195e6a67e694894827255e0b7d7cf3/Mock.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2ls1abCOOqX3yxjDElE6xVuacBB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -31,18 +44,25 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "7b57409a-4bd1-487c-afdc-8cacc8dbb0da.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "c36f97a8-c13c-40ea-b578-29e13f94860d.executor": "Debug",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\rouge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\rouge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\rouge\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\Rasmus\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Rasmus\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Rasmus\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -147,12 +167,14 @@
       <option name="presentableId" value="Default" />
       <updated>1725954036408</updated>
       <workItem from="1725954036690" duration="168000" />
+      <workItem from="1726048280428" duration="2372000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
