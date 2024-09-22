@@ -19,8 +19,11 @@ namespace HotelBooking.UnitTests
         {
             var rooms = new List<Room>
             {
-                new Room { Id=1, Description="A" },
-                new Room { Id=2, Description="B" },
+                new Room { Id=1, Description="Single Room" },
+                new Room { Id=2, Description="Double Room" },
+                new Room { Id=3, Description="Suite" },
+                new Room { Id=4, Description="Deluxe Room" },
+                new Room { Id=5, Description="Penthouse" },
             };
 
             // Create fake RoomRepository. 
@@ -30,67 +33,77 @@ namespace HotelBooking.UnitTests
             controller = new RoomsController(fakeRoomRepository.Object);
         }
 
-        [Fact]
-        public void GetAll_ReturnsListWithCorrectNumberOfRooms()
+        [Theory]
+        [InlineData(5)]
+        public void GetAll_ReturnsListWithCorrectNumberOfRooms(int expectedRoomCount)
         {
             // Act
             var result = controller.Get() as List<Room>;
             var noOfRooms = result.Count;
 
             // Assert
-            Assert.Equal(2, noOfRooms);
+            Assert.Equal(expectedRoomCount, noOfRooms);
         }
 
-        [Fact]
-        public void GetById_RoomExists_ReturnsIActionResultWithRoom()
+        [Theory]
+        [InlineData(1, "Single Room")]
+        [InlineData(2, "Double Room")]
+        [InlineData(3, "Suite")]
+        [InlineData(4, "Deluxe Room")]
+        [InlineData(5, "Penthouse")]
+        public void GetById_RoomExists_ReturnsIActionResultWithRoom(int roomId, string expectedDescription)
         {
             // Act
-            var result = controller.Get(2) as ObjectResult;
-            var room = result.Value as Room;
-            var roomId = room.Id;
+            var result = controller.Get(roomId) as ObjectResult;
+            var room = result?.Value as Room;
 
             // Assert
-            Assert.InRange<int>(roomId, 1, 2);
+            Assert.Equal(roomId, room?.Id);
+            Assert.Equal(expectedDescription, room?.Description);
         }
 
-        [Fact]
-        public void Delete_WhenIdIsLargerThanZero_RemoveIsCalled()
+        [Theory]
+        [InlineData(1, true)]
+        [InlineData(2, true)]
+        [InlineData(5, true)]
+        [InlineData(0, false)]
+        [InlineData(-1, false)]
+        public void Delete_VerifyRemoveCalledBasedOnId(int roomId, bool shouldCallRemove)
         {
             // Act
-            controller.Delete(1);
+            controller.Delete(roomId);
 
-            // Assert against the mock object
-            fakeRoomRepository.Verify(x => x.Remove(1), Times.Once);
+            // Assert
+            if (shouldCallRemove)
+            {
+                fakeRoomRepository.Verify(x => x.Remove(roomId), Times.Once);
+            }
+            else
+            {
+                fakeRoomRepository.Verify(x => x.Remove(It.IsAny<int>()), Times.Never());
+            }
         }
 
-        [Fact]
-        public void Delete_WhenIdIsLessThanOne_RemoveIsNotCalled()
+        [Theory]
+        [InlineData(6)]
+        [InlineData(10)]
+        public void Delete_WhenIdIsLargerThanExisting_RemoveThrowsException(int roomId)
         {
             // Act
-            controller.Delete(0);
-
-            // Assert against the mock object
-            fakeRoomRepository.Verify(x => x.Remove(It.IsAny<int>()), Times.Never());
-        }
-
-        [Fact]
-        public void Delete_WhenIdIsLargerThanTwo_RemoveThrowsException()
-        {
-            // Act
-            Action act = () => controller.Delete(3);
+            Action act = () => controller.Delete(roomId);
             
             // Assert
             Assert.Throws<InvalidOperationException>(act);
-
-            // Assert against the mock object
             fakeRoomRepository.Verify(x => x.Remove(It.IsAny<int>()));
         }
-        
-        [Fact]
-        public void Post_ValidRoom_AddsRoom_ReturnsCreatedAtRoute()
+
+        [Theory]
+        [InlineData(6, "VIP Room")]
+        [InlineData(7, "Presidential Suite")]
+        public void Post_ValidRoom_AddsRoom_ReturnsCreatedAtRoute(int roomId, string description)
         {
             // Arrange
-            var newRoom = new Room { Id = 3, Description = "C" };
+            var newRoom = new Room { Id = roomId, Description = description };
 
             // Act
             var result = controller.Post(newRoom) as CreatedAtRouteResult;
@@ -110,8 +123,7 @@ namespace HotelBooking.UnitTests
             Assert.IsType<BadRequestResult>(result);
             fakeRoomRepository.Verify(x => x.Add(It.IsAny<Room>()), Times.Never);
         }
-        
-        
+
         [Fact]
         public void GetAll_EmptyRepository_ReturnsEmptyList()
         {
@@ -126,26 +138,28 @@ namespace HotelBooking.UnitTests
             Assert.Empty(result);
         }
 
-        [Fact]
-        public void GetById_RoomDoesNotExist_ReturnsNotFound()
+        [Theory]
+        [InlineData(99)]
+        [InlineData(100)]
+        public void GetById_RoomDoesNotExist_ReturnsNotFound(int roomId)
         {
             // Act
-            var result = controller.Get(99);
+            var result = controller.Get(roomId);
 
             // Assert
             Assert.IsType<NotFoundResult>(result);
         }
-        
-        
-        [Fact]
-        public void Delete_InvalidId_ReturnsBadRequest()
+
+        [Theory]
+        [InlineData(-1)]
+        [InlineData(-5)]
+        public void Delete_InvalidId_ReturnsBadRequest(int roomId)
         {
             // Act
-            var result = controller.Delete(-1);
+            var result = controller.Delete(roomId);
 
             // Assert
             Assert.IsType<BadRequestResult>(result);
         }
-        
     }
 }
