@@ -13,10 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b619f3a3-aedc-46d1-871b-28bd68cd7cf2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelBooking.UnitTests/BookingManagerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking.UnitTests/BookingManagerTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelBooking.UnitTests/RoomsControllerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking.UnitTests/RoomsControllerTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +160,9 @@
       <workItem from="1726048280428" duration="2372000" />
       <workItem from="1727007075362" duration="402000" />
       <workItem from="1727340055636" duration="3314000" />
-      <workItem from="1727679068850" duration="2469000" />
+      <workItem from="1727679068850" duration="2760000" />
+      <workItem from="1727682093664" duration="228000" />
+      <workItem from="1727683999573" duration="1333000" />
     </task>
     <servers />
   </component>
