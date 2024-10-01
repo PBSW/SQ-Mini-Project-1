@@ -163,6 +163,20 @@ namespace HotelBooking.UnitTests
             Assert.Empty(occupiedDates);
         }
         
+        [Theory]
+        [InlineData(1)] // Invalid: startDate > endDate
+        public void GetFullyOccupiedDates_Should_ThrowArgumentException_WhenInvalidDates(int dateOffset)
+        {
+            // Arrange
+            SetupRooms();
+            SetupBookings(new List<Booking>());
+
+            DateTime startDate = DateTime.Today.AddDays(dateOffset);
+            DateTime endDate = dateOffset < 0 ? startDate.AddDays(1) : startDate.AddDays(-1); // Invalid endDate
+
+            // Act & Assert
+            Assert.Throws<ArgumentException>(() => bookingManager.GetFullyOccupiedDates(startDate, endDate));
+        }
         
         // Helper Methods
         private void SetupRooms()
