@@ -34,7 +34,7 @@ namespace HotelBooking.UnitTests
                 {
                     Id = 1, StartDate = DateTime.Today.AddDays(1), EndDate = DateTime.Today.AddDays(3), IsActive = true,
                     CustomerId = 1, RoomId = 1
-                }
+                },
             };
             SetupBookings(bookings);
 
