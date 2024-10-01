@@ -107,7 +107,7 @@ namespace HotelBooking.UnitTests
 
         [Theory]
         [InlineData(1, 5, 1)] // One fully occupied day (Room 1 booked)
-        [InlineData(1, 3, 0)] // No fully occupied days in this range
+        [InlineData(4, 6, 0)] // No fully occupied days in this range
         public void GetFullyOccupiedDates_Should_ReturnOccupiedDays(int startOffset, int endOffset,
             int expectedOccupiedDays)
         {
