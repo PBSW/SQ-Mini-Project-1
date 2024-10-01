@@ -21,7 +21,7 @@ namespace HotelBooking.UnitTests
         }
 
         [Theory]
-        [InlineData(1, 3, 4, true)] // Room available, booking can be created
+        [InlineData(1, 4, 6, true)] // Room available, booking can be created
         [InlineData(1, 2, 4, false)] // Room not available, overlap with existing booking
         public void CreateBooking_Should_ReturnExpectedResult(int customerId, int startOffset, int endOffset,
             bool expectedResult)
@@ -34,6 +34,11 @@ namespace HotelBooking.UnitTests
                 {
                     Id = 1, StartDate = DateTime.Today.AddDays(1), EndDate = DateTime.Today.AddDays(3), IsActive = true,
                     CustomerId = 1, RoomId = 1
+                },
+                new Booking
+                {
+                    Id = 1, StartDate = DateTime.Today.AddDays(2), EndDate = DateTime.Today.AddDays(4), IsActive = true,
+                    CustomerId = 1, RoomId = 2
                 },
             };
             SetupBookings(bookings);
@@ -53,7 +58,7 @@ namespace HotelBooking.UnitTests
         }
 
         [Theory]
-        [InlineData(2, 3, 1)] // Room 1 available
+        [InlineData(4, 6, 1)] // Room 1 available
         [InlineData(2, 4, -1)] // No room available (overlap)
         public void FindAvailableRoom_Should_ReturnExpectedRoomId(int startOffset, int endOffset, int expectedRoomId)
         {
@@ -65,7 +70,12 @@ namespace HotelBooking.UnitTests
                 {
                     Id = 1, StartDate = DateTime.Today.AddDays(1), EndDate = DateTime.Today.AddDays(3), IsActive = true,
                     CustomerId = 1, RoomId = 1
-                }
+                },
+                new Booking
+                {
+                    Id = 1, StartDate = DateTime.Today.AddDays(1), EndDate = DateTime.Today.AddDays(3), IsActive = true,
+                    CustomerId = 1, RoomId = 2
+                },
             };
             SetupBookings(bookings);
 
@@ -112,7 +122,7 @@ namespace HotelBooking.UnitTests
                 },
                 new Booking
                 {
-                    Id = 2, StartDate = DateTime.Today.AddDays(4), EndDate = DateTime.Today.AddDays(5), IsActive = true,
+                    Id = 2, StartDate = DateTime.Today.AddDays(3), EndDate = DateTime.Today.AddDays(6), IsActive = true,
                     CustomerId = 2, RoomId = 2
                 }
             };
