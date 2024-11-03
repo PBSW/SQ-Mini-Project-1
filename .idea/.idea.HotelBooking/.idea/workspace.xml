@@ -12,10 +12,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b619f3a3-aedc-46d1-871b-28bd68cd7cf2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b619f3a3-aedc-46d1-871b-28bd68cd7cf2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -179,7 +176,7 @@
       <workItem from="1730655712870" duration="231000" />
       <workItem from="1730655955802" duration="191000" />
       <workItem from="1730656157158" duration="33000" />
-      <workItem from="1730656206976" duration="1789000" />
+      <workItem from="1730656206976" duration="2215000" />
     </task>
     <servers />
   </component>
