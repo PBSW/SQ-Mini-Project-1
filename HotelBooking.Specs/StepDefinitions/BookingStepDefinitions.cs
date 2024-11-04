@@ -27,13 +27,13 @@ public sealed class BookingStepDefinitions
         RoomSetup();
     }
     
-    [Given("there are available rooms")]
+    [Given("that there are available rooms")]
     public void GivenThereAreAvailableRooms()
     {
         _bookRepo.Setup(repo => repo.GetAll()).Returns(new List<Booking>());
     }
     
-    [Given("there are no available rooms")]
+    [Given("that there is a period of no available rooms")]
     public void GivenThereAreNoAvailableRooms()
     {
         BookingsSetup();
