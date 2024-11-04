@@ -14,9 +14,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b619f3a3-aedc-46d1-871b-28bd68cd7cf2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelBooking.Core/Services/BookingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking.Core/Services/BookingManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HotelBooking.Specs/Features/Booking.feature" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking.Specs/Features/Booking.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelBooking.Specs/HotelBooking.Specs.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking.Specs/HotelBooking.Specs.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HotelBooking.Specs/StepDefinitions/BookingStepDefinitions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking.Specs/StepDefinitions/BookingStepDefinitions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,7 +181,7 @@
       <workItem from="1730655955802" duration="191000" />
       <workItem from="1730656157158" duration="33000" />
       <workItem from="1730656206976" duration="2394000" />
-      <workItem from="1730712322286" duration="6378000" />
+      <workItem from="1730712322286" duration="7652000" />
     </task>
     <servers />
   </component>

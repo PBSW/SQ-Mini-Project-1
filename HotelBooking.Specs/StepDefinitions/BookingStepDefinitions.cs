@@ -21,15 +21,16 @@ public sealed class BookingStepDefinitions
         _roomRepo = new Mock<IRepository<Room>>();
         
         _bookingManager = new BookingManager(_bookRepo.Object, _roomRepo.Object);
+        
+        RoomSetup();
     }
     
     // For additional details on Reqnroll step definitions see https://go.reqnroll.net/doc-stepdef
 
-    [Given("there are available rooms on given date")]
-    public void GivenThereAreAvailableRoomsOnDate()
+    [Given("there are available rooms {int} days from now till {int} days from now")]
+    public void GivenThereAreAvailableRoomsOnDate(int daysFromNow, int daysToNow)
     {
-        RoomSetup();
-        _bookingManager.FindAvailableRoom(DateTime.Now.AddDays(2), DateTime.Now.AddDays(5));
+        _bookingManager.FindAvailableRoom(DateTime.Now.AddDays(daysFromNow), DateTime.Now.AddDays(daysToNow));
     }
 
     [When("the user attempts to book a room")]
@@ -61,4 +62,23 @@ public sealed class BookingStepDefinitions
         
         _roomRepo.Setup(repo => repo.GetAll()).Returns(rooms);
     }
+
+    private void BookingsSetup()
+    {
+        var bookings = new List<Booking>
+        {
+            new Booking
+            {
+                Id = 1, StartDate = DateTime.Today.AddDays(1), EndDate = DateTime.Today.AddDays(3), IsActive = true,
+                CustomerId = 1, RoomId = 1
+            },
+            new Booking
+            {
+                Id = 2, StartDate = DateTime.Today.AddDays(3), EndDate = DateTime.Today.AddDays(6), IsActive = true,
+                CustomerId = 2, RoomId = 2
+            }
+        };
+        
+            _bookRepo.Setup(repo => repo.GetAll()).Returns(bookings);
+        }
 }
