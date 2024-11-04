@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using FluentAssertions;
 using HotelBooking.Core;
 using Reqnroll;
 using Xunit;
@@ -10,10 +11,11 @@ namespace HotelBooking.Specs.StepDefinitions;
 [Binding]
 public sealed class BookingStepDefinitions
 {
-    public Mock<IRepository<Room>> _roomRepo;
-    public Mock<IRepository<Booking>> _bookRepo;
-    public IBookingManager _bookingManager;
-    public bool _bookingResult;
+    private Mock<IRepository<Room>> _roomRepo;
+    private Mock<IRepository<Booking>> _bookRepo;
+    private IBookingManager _bookingManager;
+    private bool _bookingResult;
+    private Action _bookingAction;
 
     public BookingStepDefinitions()
     {
@@ -25,25 +27,34 @@ public sealed class BookingStepDefinitions
         RoomSetup();
     }
     
-    // For additional details on Reqnroll step definitions see https://go.reqnroll.net/doc-stepdef
-
-    [Given("there are available rooms {int} days from now till {int} days from now")]
-    public void GivenThereAreAvailableRoomsOnDate(int daysFromNow, int daysToNow)
+    [Given("there are available rooms")]
+    public void GivenThereAreAvailableRooms()
     {
-        _bookingManager.FindAvailableRoom(DateTime.Now.AddDays(daysFromNow), DateTime.Now.AddDays(daysToNow));
+        _bookRepo.Setup(repo => repo.GetAll()).Returns(new List<Booking>());
+    }
+    
+    [Given("there are no available rooms")]
+    public void GivenThereAreNoAvailableRooms()
+    {
+        BookingsSetup();
     }
 
-    [When("the user attempts to book a room")]
-    public void WhenTheUserAttemptsToBookARoom()
+    [When("the user attempts to book a room from {int} days from now to {int} days from now")]
+    public void WhenTheUserAttemptsToBookARoom(int startOffset, int endOffset)
     {
         var newBooking = new Booking
         {
-            StartDate = DateTime.Now.AddDays(2),
-            EndDate = DateTime.Now.AddDays(5),
+            StartDate = DateTime.Now.AddDays(startOffset),
+            EndDate = DateTime.Now.AddDays(endOffset),
             CustomerId = 1
         };
-
-        _bookingResult = _bookingManager.CreateBooking(newBooking);
+        
+        _bookingAction = () => _bookingManager.CreateBooking(newBooking);
+        
+        if (startOffset <= endOffset) 
+        {
+            _bookingResult = _bookingManager.CreateBooking(newBooking);
+        }
     }
 
     [Then("the booking is created successfully")]
@@ -51,7 +62,19 @@ public sealed class BookingStepDefinitions
     {
         Assert.True(_bookingResult);
     }
+    
+    [Then("the booking is not created")]
+    public void ThenBookingIsNotCreated()
+    {
+        Assert.False(_bookingResult);
+    }
 
+    [Then("an ArgumentException is thrown")]
+    public void ThenAnArgumentExceptionIsThrown()
+    {
+        _bookingAction.Should().Throw<ArgumentException>("the end date is before the start date, which is invalid");
+    }
+    
     private void RoomSetup()
     {
         var rooms = new List<Room>
@@ -69,7 +92,7 @@ public sealed class BookingStepDefinitions
         {
             new Booking
             {
-                Id = 1, StartDate = DateTime.Today.AddDays(1), EndDate = DateTime.Today.AddDays(3), IsActive = true,
+                Id = 1, StartDate = DateTime.Today.AddDays(1), EndDate = DateTime.Today.AddDays(5), IsActive = true,
                 CustomerId = 1, RoomId = 1
             },
             new Booking
@@ -79,6 +102,6 @@ public sealed class BookingStepDefinitions
             }
         };
         
-            _bookRepo.Setup(repo => repo.GetAll()).Returns(bookings);
-        }
+        _bookRepo.Setup(repo => repo.GetAll()).Returns(bookings);
+    }
 }
