@@ -12,8 +12,8 @@ namespace HotelBooking.Core
         // Constructor injection
         public BookingManager(IRepository<Booking> bookingRepository, IRepository<Room> roomRepository)
         {
-            this.bookingRepository = bookingRepository;
-            this.roomRepository = roomRepository;
+            this.bookingRepository = bookingRepository ?? throw new NullReferenceException("Booking repository is null");;
+            this.roomRepository = roomRepository ?? throw new NullReferenceException("Room repository is null");;
         }
 
         public bool CreateBooking(Booking booking)

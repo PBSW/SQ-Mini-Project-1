@@ -1,45 +1,64 @@
+using System;
+using System.Collections.Generic;
+using HotelBooking.Core;
 using Reqnroll;
+using Xunit;
+using Moq;
 
 namespace HotelBooking.Specs.StepDefinitions;
 
 [Binding]
 public sealed class BookingStepDefinitions
 {
+    public Mock<IRepository<Room>> _roomRepo;
+    public Mock<IRepository<Booking>> _bookRepo;
+    public IBookingManager _bookingManager;
+    public bool _bookingResult;
+
+    public BookingStepDefinitions()
+    {
+        _bookRepo = new Mock<IRepository<Booking>>();
+        _roomRepo = new Mock<IRepository<Room>>();
+        
+        _bookingManager = new BookingManager(_bookRepo.Object, _roomRepo.Object);
+    }
+    
     // For additional details on Reqnroll step definitions see https://go.reqnroll.net/doc-stepdef
 
-    [Given("the first number is {int}")]
-    public void GivenTheFirstNumberIs(int number)
+    [Given("there are available rooms on given date")]
+    public void GivenThereAreAvailableRoomsOnDate()
     {
-        //TODO: implement arrange (precondition) logic
-        // For storing and retrieving scenario-specific data see https://go.reqnroll.net/doc-sharingdata
-        // To use the multiline text or the table argument of the scenario,
-        // additional string/DataTable parameters can be defined on the step definition
-        // method. 
-
-        throw new PendingStepException();
+        RoomSetup();
+        _bookingManager.FindAvailableRoom(DateTime.Now.AddDays(2), DateTime.Now.AddDays(5));
     }
 
-    [Given("the second number is {int}")]
-    public void GivenTheSecondNumberIs(int number)
+    [When("the user attempts to book a room")]
+    public void WhenTheUserAttemptsToBookARoom()
     {
-        //TODO: implement arrange (precondition) logic
+        var newBooking = new Booking
+        {
+            StartDate = DateTime.Now.AddDays(2),
+            EndDate = DateTime.Now.AddDays(5),
+            CustomerId = 1
+        };
 
-        throw new PendingStepException();
+        _bookingResult = _bookingManager.CreateBooking(newBooking);
     }
 
-    [When("the two numbers are added")]
-    public void WhenTheTwoNumbersAreAdded()
+    [Then("the booking is created successfully")]
+    public void ThenBookingIsSuccessful()
     {
-        //TODO: implement act (action) logic
-
-        throw new PendingStepException();
+        Assert.True(_bookingResult);
     }
 
-    [Then("the result should be {int}")]
-    public void ThenTheResultShouldBe(int result)
+    private void RoomSetup()
     {
-        //TODO: implement assert (verification) logic
-
-        throw new PendingStepException();
+        var rooms = new List<Room>
+        {
+            new Room { Id = 1, Description = "Single Room" },
+            new Room { Id = 2, Description = "Double Room" }
+        };
+        
+        _roomRepo.Setup(repo => repo.GetAll()).Returns(rooms);
     }
 }

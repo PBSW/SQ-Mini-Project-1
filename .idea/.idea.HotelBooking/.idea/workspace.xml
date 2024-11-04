@@ -12,7 +12,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b619f3a3-aedc-46d1-871b-28bd68cd7cf2" name="Changes" comment="" />
+    <list default="true" id="b619f3a3-aedc-46d1-871b-28bd68cd7cf2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelBooking.Core/Services/BookingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking.Core/Services/BookingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelBooking.Specs/Features/Booking.feature" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking.Specs/Features/Booking.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelBooking.Specs/HotelBooking.Specs.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking.Specs/HotelBooking.Specs.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelBooking.Specs/StepDefinitions/BookingStepDefinitions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking.Specs/StepDefinitions/BookingStepDefinitions.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,7 +182,8 @@
       <workItem from="1730655712870" duration="231000" />
       <workItem from="1730655955802" duration="191000" />
       <workItem from="1730656157158" duration="33000" />
-      <workItem from="1730656206976" duration="2215000" />
+      <workItem from="1730656206976" duration="2394000" />
+      <workItem from="1730712322286" duration="6378000" />
     </task>
     <servers />
   </component>
@@ -186,6 +193,18 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet Exception Breakpoints">
+          <properties exception="System.NullReferenceException" isInternal="false" displayValue="NullReferenceException" namespaceName="System">
+            <option name="internal" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
