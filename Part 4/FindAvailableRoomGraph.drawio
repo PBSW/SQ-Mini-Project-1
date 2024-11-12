@@ -1,0 +1,157 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Page-1" id="hPPU_WTvcmTJA77tPGqj">
+    <mxGraphModel dx="1689" dy="1262" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-1" value="&lt;br&gt;&lt;div style=&quot;background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px; white-space: pre;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;font color=&quot;#d6d6d6&quot;&gt;1. &lt;/font&gt;&lt;span style=&quot;color: rgb(86, 156, 214);&quot;&gt;public&lt;/span&gt;&lt;span style=&quot;color: rgb(212, 212, 212);&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: rgb(86, 156, 214);&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: rgb(212, 212, 212);&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: rgb(220, 220, 170);&quot;&gt;FindAvailableRoom&lt;/span&gt;&lt;span style=&quot;color: rgb(212, 212, 212);&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: rgb(78, 201, 176);&quot;&gt;DateTime&lt;/span&gt;&lt;span style=&quot;color: rgb(212, 212, 212);&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: rgb(156, 220, 254);&quot;&gt;startDate&lt;/span&gt;&lt;span style=&quot;color: rgb(212, 212, 212);&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: rgb(78, 201, 176);&quot;&gt;DateTime&lt;/span&gt;&lt;span style=&quot;color: rgb(212, 212, 212);&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: rgb(156, 220, 254);&quot;&gt;endDate&lt;/span&gt;&lt;span style=&quot;color: rgb(212, 212, 212);&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;2. {&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;3. &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;if&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; (&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;startDate&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &amp;lt;= &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;DateTime&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;Today&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; || &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;startDate&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &amp;gt; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;endDate&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;4. &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;throw&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #569cd6;&quot;&gt;new&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #4ec9b0;&quot;&gt;ArgumentException&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;&quot;The start date cannot be in the past or later than the end date.&quot;&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;);&lt;/span&gt;&lt;/div&gt;&lt;font color=&quot;#cccccc&quot;&gt;5.&lt;br&gt;&lt;/font&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;6. &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #569cd6;&quot;&gt;var&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;activeBookings&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; = &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;bookingRepository&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;GetAll&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;().&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;Where&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; =&amp;gt; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;IsActive&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;);&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;7. &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;foreach&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; (&lt;/span&gt;&lt;span style=&quot;color: #569cd6;&quot;&gt;var&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;room&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;in&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;roomRepository&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;GetAll&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;())&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;8. &amp;nbsp; &amp;nbsp; {&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;9. &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #569cd6;&quot;&gt;var&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;activeBookingsForCurrentRoom&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; = &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;activeBookings&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;10.&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; .&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;Where&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; =&amp;gt; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;RoomId&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; == &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;room&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;Id&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;);&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;11.&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;12.&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;if&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; (&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;activeBookingsForCurrentRoom&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #dcdcaa;&quot;&gt;All&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; =&amp;gt; &lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;13.&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;startDate&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &amp;lt; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;StartDate&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &amp;amp;&amp;amp; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;endDate&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &amp;lt; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;StartDate&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;14.&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; || &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;startDate&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &amp;gt; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;EndDate&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &amp;amp;&amp;amp; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;endDate&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &amp;gt; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;EndDate&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;))&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;15.&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;16.&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;room&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;Id&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;17.&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;18.&amp;nbsp; &amp;nbsp; }&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;19.&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #c586c0;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; -&lt;/span&gt;&lt;span style=&quot;color: #b5cea8;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(204, 204, 204);&quot;&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;20. }&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry y="190" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-19" target="euvRuUtSF2NpqYDCcF2F-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-18" value="false, false" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="euvRuUtSF2NpqYDCcF2F-17">
+          <mxGeometry x="-0.2667" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-19" value="3" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+          <mxGeometry x="569" y="510" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-20" value="19" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="569" y="1060" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-21" value="Source node" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="509" y="510" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-22" value="Sink node" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="509" y="1120" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-25" target="euvRuUtSF2NpqYDCcF2F-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-24" value="Throw" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="euvRuUtSF2NpqYDCcF2F-23">
+          <mxGeometry x="-0.4321" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-25" value="4" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="719" y="570" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-27" target="euvRuUtSF2NpqYDCcF2F-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-27" value="5-6" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="569" y="632" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-30" target="euvRuUtSF2NpqYDCcF2F-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-30" value="7" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="569" y="737" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-31" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.025;entryY=0.263;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-19" target="euvRuUtSF2NpqYDCcF2F-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="689" y="520" as="sourcePoint" />
+            <mxPoint x="739" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-32" value="true, true&amp;nbsp;&lt;div&gt;false, true&lt;/div&gt;&lt;div&gt;true, false&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="euvRuUtSF2NpqYDCcF2F-31">
+          <mxGeometry x="-0.1469" y="1" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-33" value="Setup variable" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="469" y="632" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-35" target="euvRuUtSF2NpqYDCcF2F-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-35">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="609.2222222222222" y="959.6666666666665" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-35" value="18" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="569" y="960" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-38" value="End for-scope" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="640" y="985" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-40" target="euvRuUtSF2NpqYDCcF2F-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-40" value="9-11" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="330" y="737" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-41" value="For loop" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="649" y="762" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-42" target="euvRuUtSF2NpqYDCcF2F-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-42" value="8" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="460" y="737" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-43" value="for-loop scope" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="450" y="707" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-45" value="active bookings for room" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="295" y="708" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-47" target="euvRuUtSF2NpqYDCcF2F-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-55" value="false" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="euvRuUtSF2NpqYDCcF2F-54">
+          <mxGeometry x="-0.0533" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-47" target="euvRuUtSF2NpqYDCcF2F-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-57" value="true" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="euvRuUtSF2NpqYDCcF2F-56">
+          <mxGeometry x="-0.2321" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-47" value="12-14" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="330" y="840" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-48" value="if is available in date range" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="140" y="865" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-49" target="euvRuUtSF2NpqYDCcF2F-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-49" value="15" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="330" y="950" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-50" target="euvRuUtSF2NpqYDCcF2F-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-50" value="16" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1060" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-51" target="euvRuUtSF2NpqYDCcF2F-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="euvRuUtSF2NpqYDCcF2F-51" target="euvRuUtSF2NpqYDCcF2F-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-51" value="17" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="460" y="840" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-61" value="return room.id" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="230" y="1085" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-62" value="if-scope start" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="225" y="968" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="euvRuUtSF2NpqYDCcF2F-63" value="if-scope end" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="460" y="930" width="90" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

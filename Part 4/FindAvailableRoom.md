@@ -1,26 +1,26 @@
 # Code
 
 ```csharp
-public int FindAvailableRoom(DateTime startDate, DateTime endDate)
-{
-    if (startDate <= DateTime.Today || startDate > endDate)
-        throw new ArgumentException("The start date cannot be in the past or later than the end date.");
-
-    var activeBookings = bookingRepository.GetAll().Where(b => b.IsActive);
-    foreach (var room in roomRepository.GetAll())
-    {
-        var activeBookingsForCurrentRoom = activeBookings
-        .Where(b => b.RoomId == room.Id);
-        
-        if (activeBookingsForCurrentRoom.All(b => 
-        startDate < b.StartDate && endDate < b.StartDate 
-        || startDate > b.EndDate && endDate > b.EndDate))
-        {
-            return room.Id;
-        }
-    }
-    return -1;
-}
+1. public int FindAvailableRoom(DateTime startDate, DateTime endDate)
+2. {
+3.     if (startDate <= DateTime.Today || startDate > endDate)
+4.         throw new ArgumentException("The start date cannot be in the past or later than the end date.");
+5.
+6.     var activeBookings = bookingRepository.GetAll().Where(b => b.IsActive);
+7.     foreach (var room in roomRepository.GetAll())
+8.     {
+9.         var activeBookingsForCurrentRoom = activeBookings
+10.        .Where(b => b.RoomId == room.Id);
+11.        
+12.        if (activeBookingsForCurrentRoom.All(b => 
+13.        startDate < b.StartDate && endDate < b.StartDate 
+14.        || startDate > b.EndDate && endDate > b.EndDate))
+15.        {
+16.            return room.Id;
+17.        }
+18.    }
+19.    return -1;
+20. }
 ```
 
 # Test Cases

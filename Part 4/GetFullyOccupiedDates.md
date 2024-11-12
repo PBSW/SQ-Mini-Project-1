@@ -1,28 +1,28 @@
 # Code
 
 ```csharp
-public List<DateTime> GetFullyOccupiedDates(DateTime startDate, DateTime endDate)
-{
-    if (startDate > endDate)
-        throw new ArgumentException("The start date cannot be later than the end date");
-
-    List<DateTime> fullyOccupiedDates = new List<DateTime>();
-    int noOfRooms = roomRepository.GetAll().Count();
-    var bookings = bookingRepository.GetAll();
-
-    if (bookings.Any())
-    {
-        for (DateTime d = startDate; d <= endDate; d = d.AddDays(1))
-        {
-            var noOfBookings = from b in bookings
-                               where b.IsActive && d >= b.StartDate && d <= b.EndDate
-                               select b;
-            if (noOfBookings.Count() >= noOfRooms)
-                fullyOccupiedDates.Add(d);
-        }
-    }
-    return fullyOccupiedDates;
-}
+1. public List<DateTime> GetFullyOccupiedDates(DateTime startDate, DateTime endDate)
+2. {
+3.    if (startDate > endDate)
+4.        throw new ArgumentException("The start date cannot be later than the end date");
+5.
+6.    List<DateTime> fullyOccupiedDates = new List<DateTime>();
+7.    int noOfRooms = roomRepository.GetAll().Count();
+8.    var bookings = bookingRepository.GetAll();
+9.
+10.    if (bookings.Any())
+11.    {
+12.       for (DateTime d = startDate; d <= endDate; d = d.AddDays(1))
+13.        {
+14.            var noOfBookings = from b in bookings
+15.                               where b.IsActive && d >= b.StartDate && d <= b.EndDate
+16.                               select b;
+17.            if (noOfBookings.Count() >= noOfRooms)
+18.                fullyOccupiedDates.Add(d);
+19.        }
+20.    }
+21.    return fullyOccupiedDates;
+22. }
 ```
 
 
