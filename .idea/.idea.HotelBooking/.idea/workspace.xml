@@ -13,6 +13,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b619f3a3-aedc-46d1-871b-28bd68cd7cf2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Part 4/FindAvailableRoomMCDC.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Part 4/GetFullyOccupiedDatesMCDC.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HotelBooking/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -46,32 +48,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.HotelBooking.Mvc: IIS Express.executor": "Debug",
-    "7b57409a-4bd1-487c-afdc-8cacc8dbb0da.executor": "Debug",
-    "7f69f66c-9342-4a1b-ad65-822ab38bcf0b.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "c36f97a8-c13c-40ea-b578-29e13f94860d.executor": "Debug",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Rasmus\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Rasmus\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Rasmus\\AppData\\Local\\Symbols\\src"
-    ]
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.HotelBooking.Mvc: IIS Express.executor&quot;: &quot;Debug&quot;,
+    &quot;7b57409a-4bd1-487c-afdc-8cacc8dbb0da.executor&quot;: &quot;Debug&quot;,
+    &quot;7f69f66c-9342-4a1b-ad65-822ab38bcf0b.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;c36f97a8-c13c-40ea-b578-29e13f94860d.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.HotelBooking.Mvc: IIS Express">
     <configuration name="HotelBooking.Mvc: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/HotelBooking.Mvc/HotelBooking.Mvc.csproj" />
@@ -189,6 +184,8 @@
       <workItem from="1730656206976" duration="2394000" />
       <workItem from="1730712322286" duration="7652000" />
       <workItem from="1731413636174" duration="81000" />
+      <workItem from="1731809961829" duration="3882000" />
+      <workItem from="1731813993390" duration="114000" />
     </task>
     <servers />
   </component>
